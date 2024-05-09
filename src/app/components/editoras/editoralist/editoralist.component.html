@@ -1,1 +1,34 @@
-<p>editoralist works!</p>
+<div class="container">
+    <h1>Listagem de editoras</h1>
+    <table class="table table-hover">
+      <thead>
+        <tr class="table-info">
+          <th scope="col" class="col-1">#</th>
+          <th scope="col" class="col-6">Nome</th>
+          <th scope="col" class="col-2">
+              <button type="button" class="btn btn-success" data-mdb-ripple-init>Cadastrar</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+          @for (editora of lista; track $index) {
+              <tr>
+                <th scope="row">{{editora.id}}</th>
+                <td>{{editora.nome}}</td>
+                <td>
+                  <div class="row">
+                      <div class="col-5">
+                          <button type="button" class="btn btn-info" data-mdb-ripple-init>Alterar</button>
+                      </div>
+                      <div class="col-1"></div>
+                      <div class="col-5">
+                          <button type="button" class="btn btn-danger" data-mdb-ripple-init>Deletar</button>
+                      </div>
+                  </div>
+                </td>
+              </tr>
+          }
+      </tbody>
+    </table>
+  </div>
+  
