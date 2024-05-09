@@ -18,13 +18,9 @@ export class LoginComponent {
   router = inject(Router);
 
   logar(){
-    if(this.login=='admin' && this.senha=='admin'){
+    if(this.login=='admin' && this.senha=='admin')
       this.router.navigate(['admin/livros'])
-    }
-    else{
-      alert(this.login);
-      alert(this.senha);
+    else
       alert('Login ou senha incorretos');
-    }
   }
 }
