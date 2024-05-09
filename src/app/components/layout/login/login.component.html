@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+              <form>
+                <!-- Email input -->
+                <mdb-form-control class="mb-4">
+                  <input
+                    mdbInput
+                    type="email"
+                    id="form1Example1"
+                    class="form-control"
+                    name="form1Example1"
+                    [(ngModel)]="login"
+                    value="admin"
+                  />
+                  <label mdbLabel class="form-label" for="form1Example1"
+                    >Email address</label
+                  >
+                </mdb-form-control>
+        
+                <!-- Password input -->
+                <mdb-form-control class="mb-4">
+                  <input
+                    mdbInput
+                    type="password"
+                    id="form1Example2"
+                    name="form1Example2"
+                    class="form-control"
+                    [(ngModel)]="senha"
+                    value="admin"
+                  />
+                  <label mdbLabel class="form-label" for="form1Example2"
+                    >Password</label
+                  >
+                </mdb-form-control>
+        
+        
+                <!-- Submit button -->
+                <button mdbRipple type="button" class="btn btn-primary btn-block" (click)="logar()">
+                  Sign in
+                </button>
+              </form>
+            </div>
+          </div>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
