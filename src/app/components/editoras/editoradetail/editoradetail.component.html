@@ -1,1 +1,18 @@
-<p>editoradetail works!</p>
+<div class="container">
+    <form >
+        <!-- Email input -->
+        <mdb-form-control class="mb-4">
+          <input mdbInput type="number" id="form2Example1" class="form-control" name="form2Example1" [(ngModel)]="editora.id"/>
+          <label mdbLabel class="form-label" for="form2Example1">Id</label>
+        </mdb-form-control>
+      
+        <!-- Password input -->
+        <mdb-form-control class="mb-4">
+          <input mdbInput type="text" id="form2Example2" class="form-control" name="form2Example2" [(ngModel)]="editora.nome"/>
+          <label mdbLabel class="form-label" for="form2Example2">Nome</label>
+        </mdb-form-control>
+      
+        <!-- Submit button -->
+        <button mdbRipple type="button" class="btn btn-primary btn-block mb-4">Salvar</button>
+      </form>
+</div>

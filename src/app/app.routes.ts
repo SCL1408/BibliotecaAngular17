@@ -17,6 +17,7 @@ export const routes: Routes = [
         {path: 'editoras', component:EditoralistComponent},
         {path: 'livros/new', component: LivrodetailComponent},
         {path: 'autores/new', component: AutordetailComponent},
-        {path: 'editoras/new', component: EditoradetailComponent}
+        {path: 'editoras/new', component: EditoradetailComponent},
+        {path: 'editoras/edit/:id', component: EditoradetailComponent}
     ]}
 ];
