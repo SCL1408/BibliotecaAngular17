@@ -16,11 +16,17 @@ export class AutorlistComponent {
   }
 
   findAll(){
-    let autor = new Autor(1, 'Antoine de Saint-Exupéry');
+    let autor = new Autor();
+    autor.id = 1;
+    autor.nome = 'Antoine de Saint-Exupéry';
     this.lista.push(autor);
-    autor = new Autor(2, 'Miguel de Cervantes');
+    autor = new Autor();
+    autor.id = 1;
+    autor.nome = 'Miguel de Cervantes';
     this.lista.push(autor);
-    autor = new Autor(3, 'Franz Kafka');
+    autor = new Autor();
+    autor.id = 1;
+    autor.nome = 'Franz Kafka';
     this.lista.push(autor);
   }
 

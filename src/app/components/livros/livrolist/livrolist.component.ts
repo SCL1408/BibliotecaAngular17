@@ -16,11 +16,17 @@ export class LivrolistComponent {
   }
 
   findAll(){
-    let livro = new Livro(1, 'O Pequeno Príncipe');
+    let livro = new Livro();
+    livro.id = 1;
+    livro.nome = 'O Pequeno Príncipe';
     this.lista.push(livro);
-    livro = new Livro(2, 'Dom Quixote');
+    livro = new Livro();
+    livro.id = 2;
+    livro.nome = 'Dom Quixote';
     this.lista.push(livro);
-    livro = new Livro(3, 'A Metamorfose');
+    livro = new Livro();
+    livro.id = 3;
+    livro.nome = 'A Metamorfose';
     this.lista.push(livro);
   }
 }
