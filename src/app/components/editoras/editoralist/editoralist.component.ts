@@ -2,6 +2,7 @@ import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
 import { Editora } from '../../../modules/editora';
 import { MdbModalModule, MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { EditoradetailComponent } from '../editoradetail/editoradetail.component';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -43,8 +44,26 @@ export class EditoralistComponent {
     this.modalRef = this.modalService.open(this.modalDetalhe);//usa modalService para abrir o trecho observado por modalDetalher e salva uma referência ao modal em modalRef
   }
   edit(editora: Editora){
-    // this.editoraEdit = Object.assign({}, editora);
-    this.editoraEdit = editora;
+    this.editoraEdit = Object.assign({}, editora);
     this.modalRef = this.modalService.open(this.modalDetalhe);//usa modalService para abrir o trecho observado por modalDetalher e salva uma referência ao modal em modalRef
+  }
+  retornoDetalhe(editora: Editora){
+    let swalText;
+    if(this.editoraEdit.id>0){
+      let indice = this.lista.findIndex((e) => {
+        return e.id==this.editoraEdit.id;
+      });
+      this.lista[indice] = editora;
+      swalText = 'Editora editada com sucesso';
+    }else{
+      this.lista.push(editora);
+      swalText = 'Editora criada com sucesso';
+    }
+    this.modalRef.close();
+    Swal.fire({
+      title: "Operação Concluída",
+      text: swalText,
+      icon: "success"
+    });
   }
 }

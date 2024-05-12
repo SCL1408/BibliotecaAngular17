@@ -42,6 +42,6 @@
         ></button>
       </div>
       <div class="modal-body">
-        <app-editoradetail [editora]="editoraEdit"></app-editoradetail>
+        <app-editoradetail [editora]="editoraEdit" (retorno)="retornoDetalhe($event)"></app-editoradetail>
       </div>
 </ng-template>

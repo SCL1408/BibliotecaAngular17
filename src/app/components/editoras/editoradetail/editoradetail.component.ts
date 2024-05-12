@@ -1,7 +1,9 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, inject, input } from '@angular/core';
 import { Editora } from '../../../modules/editora';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editoradetail',
@@ -12,9 +14,15 @@ import { FormsModule } from '@angular/forms';
 })
 export class EditoradetailComponent {
   @Input('editora') editora: Editora = new Editora();
+  @Output('retorno') retorno: EventEmitter<any> = new EventEmitter();
+
+  router = inject(Router);
   
   constructor(){
-    console.log(this.editora.id);
-    console.log(this.editora.nome);
+  }
+
+  save(){
+    this.retorno.emit(this.editora);
+    this.router.navigate(['admin/editora'])
   }
 }

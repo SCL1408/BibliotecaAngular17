@@ -8,11 +8,11 @@
       
         <!-- Password input -->
         <mdb-form-control class="mb-4">
-          <input mdbInput type="text" id="form2Example2" class="form-control" name="form2Example2" [(ngModel)]="editora.nome"/>
+          <input mdbInput type="text" id="form2Example2" class="form-control" name="form2Example2" [(ngModel)]="editora.nome" (keyup.enter)="save()"/>
           <label mdbLabel class="form-label" for="form2Example2">Nome</label>
         </mdb-form-control>
       
         <!-- Submit button -->
-        <button mdbRipple type="button" class="btn btn-primary btn-block mb-4">Salvar</button>
+        <button mdbRipple type="button" class="btn btn-primary btn-block mb-4" (click)="save()">Salvar</button>
       </form>
 </div>
