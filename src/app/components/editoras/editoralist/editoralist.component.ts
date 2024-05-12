@@ -49,16 +49,19 @@ export class EditoralistComponent {
   }
   retornoDetalhe(editora: Editora){
     let swalText;
-    if(this.editoraEdit.id>0){
+
+    if(this.lista.find((e)=>e.id==editora.id) === undefined){
+      this.lista.push(editora);
+      swalText = 'Editora criada com sucesso';
+    }
+    else{
       let indice = this.lista.findIndex((e) => {
         return e.id==this.editoraEdit.id;
       });
       this.lista[indice] = editora;
       swalText = 'Editora editada com sucesso';
-    }else{
-      this.lista.push(editora);
-      swalText = 'Editora criada com sucesso';
     }
+
     this.modalRef.close();
     Swal.fire({
       title: "Operação Concluída",

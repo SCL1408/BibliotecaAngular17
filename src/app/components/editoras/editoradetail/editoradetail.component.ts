@@ -23,6 +23,6 @@ export class EditoradetailComponent {
 
   save(){
     this.retorno.emit(this.editora);
-    this.router.navigate(['admin/editora'])
+    this.router.navigate(['admin/editoras'])
   }
 }
